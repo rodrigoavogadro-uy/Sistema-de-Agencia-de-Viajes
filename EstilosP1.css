@@ -1,0 +1,790 @@
+/* Reset y configuración básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+    color: #2C3E50;
+    min-height: 100vh;
+    padding: 0;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Overlay decorativo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(26, 188, 156, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Header superior fijo */
+body::after {
+    content: '✈️ TRAVEL WORLD AGENCY';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(26, 188, 156, 0.95) 0%, rgba(22, 160, 133, 0.95) 100%);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 3px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #f39c12;
+    backdrop-filter: blur(10px);
+}
+
+/* Formularios de login/registro más compactos */
+#pantallaInicio,
+#pantallaRegistro {
+    max-width: 480px;
+    margin-top: 100px;
+}
+
+/* Formularios con tablas usan más ancho */
+#pantallaExplorarDestinos,
+#pantallaReservarDestinos,
+#pantallaHistorialReservas,
+#pantallaReservarDestinosEnOferta,
+#pantallaAdministrarDestinos,
+#pantallaAgregarDestinos,
+#pantallaInformeGanancias,
+#pantallaListadoYAprobacionDeReservas,
+#pantallaPrincipalAdministradores,
+#pantallaPrincipalClientes {
+    max-width: 1200px;
+    margin-top: 100px;
+}
+
+/* Contenedor principal de formularios */
+.form {
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2.5rem 2rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Decoración de fondo en pantalla de inicio */
+#pantallaInicio {
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(248, 249, 250, 0.3) 100%),
+                      url('Imgs/MenuInicio.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+
+#pantallaRegistro {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/Registro.jpg') center/cover;
+}
+
+/* Menús principales con imágenes temáticas */
+#pantallaPrincipalAdministradores {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/MenuAdministrador.jpg') center/cover;
+}
+
+#pantallaPrincipalClientes {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/MenuClientes.jpg') center/cover;
+}
+
+#pantallaAgregarDestinos{
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/AgregarDestinos.jpg') center/cover;
+}
+
+#pantallaAdministrarDestinos{
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/AdministrarDestinos.jpg') center/cover;
+}
+
+#pantallaInformeGanancias{
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/InformeGanancias.jpg') center/cover;
+}
+
+#pantallaExplorarDestinos{
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/ExplorarDestinos.jpg') center/cover;
+}
+
+#pantallaReservarDestinos{
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/ReservarDestinos.jpg') center/cover;
+}
+
+#pantallaReservarDestinos{
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/ReservarDestinos.jpg') center/cover;
+}
+
+#pantallaHistorialReservas{
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/HistorialDeReservas.jpg') center/cover;
+}
+
+#pantallaReservarDestinosEnOferta{
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.1) 100%),
+                url('Imgs/DestinosEnOferta.jpg') center/cover;
+}
+
+/* Títulos principales */
+.form h1 {
+    width: 100%;
+    background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.form h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #f39c12, transparent);
+    border-radius: 2px;
+}
+
+.form h2 {
+    width: 100%;
+    color: #e74c3c;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Labels */
+.form label {
+    color: #34495e;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    align-self: center;
+    text-align: center;
+    font-size: 0.95rem;
+    width: 90%;
+    display: block;
+}
+
+/* Inputs y Selects */
+.form input,
+.form select {
+    width: 90%;
+    max-width: 450px;
+    padding: 1rem 1.2rem;
+    margin: 0.5rem auto 1rem auto;
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    color: #2C3E50;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: block;
+    text-align: center;
+}
+
+.form input:focus,
+.form select:focus {
+    outline: none;
+    border-color: #1abc9c;
+    box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.15),
+                0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.form input::placeholder {
+    color: #95A5A6;
+    text-align: center;
+}
+
+/* Select personalizado */
+select {
+    appearance: none;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABZSURBVCiRY/hPADCBaAYGBob///8zMDAwMPz//5+BgYEBmwYWkBgTSAKbZpCCf//+YdVAjGaQYpCEqqoqVg1M2DSDFGDTDFKATTNIAcg8kGJ0Gkk1DQBvbBgMKDZsVQAAAABJRU5ErkJggg==');
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center;
+    padding-right: 3rem;
+    cursor: pointer;
+}
+
+/* Botones principales */
+.boton {
+    width: 90%;
+    max-width: 450px;
+    padding: 1.2rem 2rem;
+    margin: 0.7rem auto;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.boton::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.boton:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.boton:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(231, 76, 60, 0.5);
+}
+
+.boton:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Botones específicos del menú principal */
+#botonListadoAprobacionReservas,
+#botonAgregarDestinos,
+#botonAdministrarDestinos,
+#botonInformeGanancias,
+#botonExplorarDestinos,
+#botonReservarDestinos,
+#botonHistorialDeReservas,
+#botonDestinosEnOferta {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+#botonListadoAprobacionReservas:hover,
+#botonAgregarDestinos:hover,
+#botonAdministrarDestinos:hover,
+#botonInformeGanancias:hover,
+#botonExplorarDestinos:hover,
+#botonReservarDestinos:hover,
+#botonHistorialDeReservas:hover,
+#botonDestinosEnOferta:hover {
+    box-shadow: 0 12px 30px rgba(52, 152, 219, 0.5);
+}
+
+/* Botones de acción positiva */
+#botonIngresar,
+#botonRegistrar,
+#botonAgregarDestino,
+#botonConfirmarReservaDestino,
+#botonConfirmarReservaDestinoEnOferta,
+#botonVerListado {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+}
+
+#botonIngresar:hover,
+#botonRegistrar:hover,
+#botonAgregarDestino:hover,
+#botonConfirmarReservaDestino:hover,
+#botonConfirmarReservaDestinoEnOferta:hover,
+#botonVerListado:hover {
+    box-shadow: 0 12px 30px rgba(39, 174, 96, 0.5);
+}
+
+/* Botones secundarios (Volver, Cerrar Sesión) */
+#botonVolverRegistro,
+#botonVolverExplorarDestinos,
+#botonVolverReservarDestinos,
+#botonVolverHistorialReservas,
+#botonVolverReservarDestinosEnOferta,
+#botonVolverAdministrarDestinos,
+#botonVolverAgregarDestinos,
+#botonVolverInformeGanancias,
+#botonVolverListadoYAprobacionDeReservas,
+#botonCerrarSesionAdministrador,
+#botonCerrarSesionCliente {
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+    box-shadow: 0 8px 20px rgba(149, 165, 166, 0.4);
+}
+
+#botonVolverRegistro:hover,
+#botonVolverExplorarDestinos:hover,
+#botonVolverReservarDestinos:hover,
+#botonVolverHistorialReservas:hover,
+#botonVolverReservarDestinosEnOferta:hover,
+#botonVolverAdministrarDestinos:hover,
+#botonVolverAgregarDestinos:hover,
+#botonVolverInformeGanancias:hover,
+#botonVolverListadoYAprobacionDeReservas:hover,
+#botonCerrarSesionAdministrador:hover,
+#botonCerrarSesionCliente:hover {
+    box-shadow: 0 12px 30px rgba(149, 165, 166, 0.5);
+}
+
+#botonIrARegistrar {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
+}
+
+#botonIrARegistrar:hover {
+    box-shadow: 0 12px 30px rgba(243, 156, 18, 0.5);
+}
+
+/* Mensajes */
+.form p {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+    width: 90%;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form p:not(:empty) {
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    animation: slideInMessage 0.4s ease-out;
+}
+
+@keyframes slideInMessage {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#errorInicio:not(:empty),
+#mensajeInicio:not(:empty),
+#mensajeRegistro:not(:empty),
+#mensajeReservarDestino:not(:empty),
+#mensajeReservarDestinoEnOferta:not(:empty),
+#mensajeAgregarDestino:not(:empty),
+#mensajeAdministrarDestinos:not(:empty),
+#mensajeListadoYAprobacionDeReservas:not(:empty) {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    color: #c62828;
+    border-left: 4px solid #e74c3c;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+}
+
+#pInformeGanancias:not(:empty) {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    color: #2e7d32;
+    border-left: 4px solid #27ae60;
+    font-size: 1.3rem;
+    padding: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+    margin: 1.5rem auto;
+    border-radius: 12px;
+}
+
+/* Contenedores de tablas */
+#mostrarTablaExplorarDestinos,
+#mostrarTablaVerHistorialDeReservas,
+#mostrarTablaDestinosEnOferta,
+#mostrarTablaTotalGeneradoPorDestino,
+#mostrarTablaListadoYAprobacionDeReservas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 0;
+}
+
+/* Tablas profesionales */
+table {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+    background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+}
+
+th {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: normal;
+    word-wrap: break-word;
+    border-bottom: 3px solid #f39c12;
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background: linear-gradient(90deg, #fff5e6 0%, #ffffff 100%);
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Imágenes en tablas - Efecto profesional */
+td img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #1abc9c;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+td img:hover {
+    transform: scale(1.8) rotate(3deg);
+    box-shadow: 0 15px 40px rgba(26, 188, 156, 0.6);
+    z-index: 100;
+    position: relative;
+    border-color: #f39c12;
+}
+
+/* Botones dentro de tablas */
+table button {
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+table button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+}
+
+/* Contenedores de selects y controles */
+#mostrarSelectReservarDestinos,
+#mostrarSelectFormaDePago,
+#mostrarSelectReservarDestinosEnOferta,
+#mostrarSelectFormaDePagoEnOferta,
+#mostrarAdministrarDestinos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+#selectListadoYAprobacionDeReservas {
+    width: 90%;
+    max-width: 450px;
+    padding: 1rem 1.2rem;
+    margin: 1rem auto;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #1abc9c;
+    border-radius: 15px;
+    color: #2C3E50;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+#selectListadoYAprobacionDeReservas:hover {
+    border-color: #f39c12;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(243, 156, 18, 0.3);
+}
+
+/* Inputs especiales (cantidad de personas, cupos) */
+#inputCantidadPersonas,
+#inputCantidadPersonasEnOferta,
+#cantidadCuposAModificar {
+    width: 90%;
+    max-width: 450px;
+    padding: 1rem 1.2rem;
+    margin: 0.5rem auto;
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    color: #2C3E50;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: block;
+    text-align: center;
+}
+
+#inputCantidadPersonas::placeholder,
+#inputCantidadPersonasEnOferta::placeholder,
+#cantidadCuposAModificar::placeholder {
+    text-align: center;
+    color: #95A5A6;
+}
+
+#inputCantidadPersonas:focus,
+#inputCantidadPersonasEnOferta:focus,
+#cantidadCuposAModificar:focus {
+    outline: none;
+    border-color: #1abc9c;
+    box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.15);
+}
+
+/* Badge informativo en pantalla inicio */
+#pantallaInicio::after {
+    content: '🌍 Descubre el mundo con nosotros | Reserva tu próxima aventura ✈️';
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(26, 188, 156, 0.9) 0%, rgba(22, 160, 133, 0.9) 100%);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.4);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body::after {
+        font-size: 1.2rem;
+        padding: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .form {
+        padding: 2rem 1rem;
+        width: 98%;
+    }
+
+    .form h1 {
+        font-size: 2rem;
+    }
+
+    .form h2 {
+        font-size: 1.2rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    td img {
+        width: 80px;
+        height: 60px;
+    }
+
+    .boton {
+        font-size: 0.9rem;
+        padding: 1rem 1.5rem;
+    }
+
+    table button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body::after {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .form {
+        padding: 1.5rem 0.8rem;
+        border-radius: 20px;
+    }
+
+    .form h1 {
+        font-size: 1.6rem;
+    }
+
+    table {
+        font-size: 0.75rem;
+    }
+
+    th, td {
+        padding: 0.6rem 0.3rem;
+        font-size: 0.75rem;
+    }
+
+    td img {
+        width: 60px;
+        height: 45px;
+    }
+
+    .boton {
+        font-size: 0.85rem;
+        padding: 0.9rem;
+    }
+}
+
+/* Animación de pulso para botones importantes */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(231, 76, 60, 0.6);
+    }
+}
+
+#botonIngresar,
+#botonRegistrar {
+    animation: pulse 2s infinite;
+}
+
+/* Efecto de carga inicial */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+}
