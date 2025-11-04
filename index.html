@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obligatorio P1 - Rodrigo Avogadro</title>
+    <script type="text/javascript" src="./PrecargadosP1.js"></script>
+    <script type="text/javascript" src="./ClasesP1.js"></script>
+    <script type="text/javascript" src="./CodigoP1.js"></script>
+    <script type="text/javascript" src="./PantallasP1.js"></script>
+    <link rel="stylesheet" type="text/css" href="./EstilosP1.css"></link>
+</head>
+<body>
+    
+     <!--PANTALLA DE INICIO-->
+     <div id="pantallaInicio" class="form">
+        <h1>AGENCIA DE VIAJES</h1>
+        <br>
+        <h2>Iniciar sesion</h2>
+        <input type="text" placeholder="Nombre de usuario" id="usuarioIngreso"/>
+        <br>
+        <input type="password" placeholder="Contraseña" id="contraseñaIngreso"/>
+        <br>
+        <p id="errorInicio"></p>
+        <button id="botonIngresar" class="boton">Ingresar</button>
+        <br>
+        <button id="botonIrARegistrar" class="boton">Registrarse</button>
+        <br>
+        <br>
+        <p id="mensajeInicio"></p>
+    </div>
+    <!--PANTALLA DE REGISTRO CLIENTES-->   
+    <div class="form" id="pantallaRegistro">
+        <h1>Registrar comprador</h1>
+        <br>
+        <br>
+        <label for="Nombre">Nombre:</label>
+        <input type="text" id="nombreRegistro" placeholder="Nombre">
+        <br>
+        <br>
+        <label for="Apellido">Apellido:</label>
+        <input type="text" id="apellidoRegistro" placeholder="Apellido">
+        <br>
+        <br>
+        <label for="Nombre de usuario">Nombre de usuario:</label>
+        <input type="text" id="usuarioRegistro" placeholder="Nombre de usuario">
+        <br>
+        <br>
+        <label for="Contraseña">Contraseña:</label>
+        <input type="text" id="contraseñaRegistro" placeholder="Contraseña">
+        <br>
+        <br>
+        <label for="Tarjeta de crédito">Tarjeta de crédito:</label>
+        <input type="text" id="tarjetaRegistro" maxlength="19" placeholder="XXXX-XXXX-XXXX-XXXX" oninput="sistema.formatoTarjeta(this)">
+        <br>
+        <br>
+        <label for="CVC">CVC:</label>
+        <input type="text" id="cvcRegistro" maxlength="3" placeholder="CVC">
+        <br>
+        <br>
+        <button class="boton" id="botonRegistrar">Registrar</button>
+        <br>
+        <br>
+        <button class="boton" id="botonVolverRegistro">Volver</button>
+        <br>
+        <br>
+        <p id="mensajeRegistro"></p>
+    </div>
+        <!--PANTALLA PRINCIPAL ADMINISTRADOR-->
+    <div class="form" id="pantallaPrincipalAdministradores">
+        <h1>Menú Principal</h1>
+        <br>
+        <button id="botonListadoAprobacionReservas" class="boton">Lista para aprobar o cancelar reservas</button>
+        <br>
+        <button id="botonAgregarDestinos" class="boton">Agregar destinos</button>
+        <br>
+        <button id="botonAdministrarDestinos" class="boton">Administrar destinos</button>
+        <br>
+        <button id="botonInformeGanancias" class="boton">Informe de ganancias</button>
+        <br>
+        <button id="botonCerrarSesionAdministrador" class="boton">Cerrar Sesión</button>
+    </div>
+        <!--PANTALLA PRINCIPAL CLIENTE-->
+    <div class="form" id="pantallaPrincipalClientes">
+        <h1>Menú Principal</h1>
+        <br>
+        <button id="botonExplorarDestinos" class="boton">Explorar destinos</button>
+        <br>
+        <button id="botonReservarDestinos" class="boton">Reservar destinos</button>
+        <br>
+        <button id="botonHistorialDeReservas" class="boton">Historial de reservas</button>
+        <br>
+        <button id="botonDestinosEnOferta" class="boton">Destinos en oferta</button>
+        <br>
+        <button id="botonCerrarSesionCliente" class="boton">Cerrar Sesión</button>
+    </div>   
+    <!--PANTALLA EXPLORAR DESTINOS-->
+    <div class="form" id="pantallaExplorarDestinos">
+        <h1>Explorar destinos</h1>
+        <br>     
+        <div id="mostrarTablaExplorarDestinos"></div>
+    </div>   
+
+    <!--PANTALLA RESERVAR DESTINOS-->
+    <div class="form" id="pantallaReservarDestinos">
+        <h1>Reservar destinos</h1>
+        <br>
+        <div id="mostrarSelectReservarDestinos"></div>
+        <div id="mostrarSelectFormaDePago"></div>
+    </div>
+
+    <!--PANTALLA VER HISTORIAL DE RESERVAS-->
+    <div class="form" id="pantallaHistorialReservas">
+        <h1>Historial de reservas</h1>
+        <br>
+        <div id="mostrarTablaVerHistorialDeReservas"></div>
+        <button id="botonVolverHistorialReservas" class="boton">Volver</button>
+    </div>
+       
+    <!--PANTALLA RESERVAR DESTINOS EN OFERTA-->
+    <div class="form" id="pantallaReservarDestinosEnOferta">
+        <h1>Reservar destinos en oferta</h1>
+        <br>
+        <div id="mostrarTablaDestinosEnOferta"></div>
+        <div id="mostrarSelectReservarDestinosEnOferta"></div>
+        <div id="mostrarSelectFormaDePagoEnOferta"></div>
+    </div>
+
+     <!--PANTALLA ADMINISTRAR DESTINOS-->
+     <div class="form" id="pantallaAdministrarDestinos">
+        <h1>Administrar destinos</h1>
+        <br>
+        <br>
+        <div id="mostrarAdministrarDestinos"></div>
+        <br>
+        <br>      
+        <button id="botonVolverAdministrarDestinos" class="boton">Volver</button>
+        <br>
+        <br>
+        <p id="mensajeAdministrarDestinos"></p>
+    </div>
+
+    <!--PANTALLA AGREGAR DESTINOS-->
+    <div class="form" id="pantallaAgregarDestinos">
+        <h1>Agregar destinos</h1>
+        <br>
+        <br>
+        <label for="agregarNombreDestino">Nombre del destino:</label>
+        <input type="text" id="agregarNombreDestino" placeholder="Nombre del destino">
+        <br>
+        <br>
+        <label for="agregarPrecio">Precio por persona:</label>
+        <input type="text" id="agregarPrecio" placeholder="Precio por persona">
+        <br>
+        <br>
+        <label for="agregarDescripcion">Descripcion:</label>
+        <input type="text" id="agregarDescripcion" placeholder="Descripcion">
+        <br>
+        <br>
+        <label for="agregarImagen">Imagen (URL)</label>
+        <input type="text" id="agregarImagen" placeholder="Imagen (URL)">
+        <br>
+        <br>
+        <label for="agregarCuposDisponibles">Cupos Disponibles</label>
+        <input type="text" id="agregarCuposDisponibles" placeholder="Cupos Disponibles">
+        <br>
+        <br>
+        <button class="boton" id="botonAgregarDestino">Agregar destino</button>
+        <br>
+        <br>
+        <button class="boton" id="botonVolverAgregarDestinos">Volver</button>
+        <br>
+        <br>
+        <p id="mensajeAgregarDestino"></p>
+    </div>
+    <!--PANTALLA INFORME DE GANANCIAS-->
+    <div class="form" id="pantallaInformeGanancias">
+        <h1>Informe de ganancias</h1>
+        <p id="pInformeGanancias"></p>
+        <br>
+        <div id="mostrarTablaTotalGeneradoPorDestino"></div>
+
+        <button id="botonVolverInformeGanancias" class="boton">Volver</button>
+    </div>
+
+    <!--PANTALLA LISTADO Y APROBACION DE RESERVAS-->
+    <div class="form" id="pantallaListadoYAprobacionDeReservas">
+        <h1>Reservas</h1>
+        <select id="selectListadoYAprobacionDeReservas">
+            <option value="Pendientes">Pendientes</option>
+            <option value="Canceladas">Canceladas</option>
+            <option value="Aprobadas">Aprobadas</option>
+        </select>
+        <div id="mostrarTablaListadoYAprobacionDeReservas"></div>
+        <br>
+        <button id="botonVerListado" class="boton">Ver listado</button>
+        <br>
+        <button id="botonVolverListadoYAprobacionDeReservas" class="boton">Volver</button>
+        <br>
+        <p id="mensajeListadoYAprobacionDeReservas"></p>
+    </div>
+</body>
+</html>
